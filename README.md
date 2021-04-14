@@ -6,4 +6,4 @@ Make up a team. The link enforced classes and tests.
 
 	[GitHub Repository](https://github.com/Farrancampbell/Team_Profile)
 
-    	![alt text](./ScreenShotAM.png)
+    	![alt text](https://github.com/Farrancampbell/Team_Profile/blob/main/ScreenShotAM.png)
