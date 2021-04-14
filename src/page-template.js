@@ -2,10 +2,11 @@ const generateTeam = (team) => {
   const generateIntern = (intern) => {
     return `
         <div class= 'card'>
-        <p>${intern.getName()}</p>
-        <p>${intern.getEmail()}</p>
-        <p>${intern.getId()}</p>
-        <p>${intern.getSchool()}</p>
+        <h3><b>Intern</b></h3>
+        <p><b>Name: </b>${intern.getName()}</p>
+        <p><b>E-Mail: </b>${intern.getEmail()}</p>
+        <p><b>ID Num: </b>${intern.getId()}</p>
+        <p><b>School: </b>${intern.getSchool()}</p>
         </div>`;
   };
 
@@ -13,20 +14,22 @@ const generateTeam = (team) => {
 const generateEngineer = (engineer) => {
   return `
     <div class= 'card'>
-    <p>${engineer.getName()}</p>
-    <p>${engineer.getEmail()}</p>
-    <p>${engineer.getId()}</p>
-    <p>${engineer.getGithub()}</p>
+    <h3><b>Engineer</b></h3>
+    <p><b>Name: </b> ${engineer.getName()}</p>
+    <p><b>E-Mail: </b>${engineer.getEmail()}</p>
+    <p><b>ID Num: </b>${engineer.getId()}</p>
+    <p><b>GitHub: </b>${engineer.getGithub()}</p>
     </div>`;
 };
 
 const generateManager = (manager) => {
   return `
     <div class= 'card'>
-    <p>${manager.getName()}</p>
-    <p>${manager.getEmail()}</p>
-    <p>${manager.getId()}</p>
-    <p>${manager.getOfficeNumber()}</p>
+    <h3><b>Manager</b></h3>
+    <p><b>Name: </b>${manager.getName()}</p>
+    <p><b>E-Mail: </b>${manager.getEmail()}</p>
+    <p><b>Id Num: </b>${manager.getId()}</p>
+    <p><b>Office Number: </b>${manager.getOfficeNumber()}</p>
     </div>`;
 };
 

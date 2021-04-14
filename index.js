@@ -23,7 +23,7 @@ function engineerQuestions() {
        },
        {
            type: "input",
-           name: "engineersId",
+           name: "engineerId",
            message: "What is the Engineer's ID Number ?",
        },
        {
@@ -59,12 +59,12 @@ function managerQuestions() {
        },
        {
            type: "input",
-           name: "ManagerEmail",
+           name: "managerEmail",
            message: "What is the Managers E-Mail ?",
        },
        {
            type: "number",
-           name: "officenumber",
+           name: "officeNumber",
            message: "What is Managers Office Number ?"
        },
    ]).then(answers => {
@@ -100,7 +100,7 @@ function internQuestions() {
        },
    ]).then(answers => {
        console.log(answers);
-       const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.github)
+       const intern = new Intern(answers.internsName, answers.internsId, answers.internsEmail, answers.school)
        console.log(intern);
        membersArray.push(intern);
        console.log(membersArray)
