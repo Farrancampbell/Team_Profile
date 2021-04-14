@@ -38,11 +38,11 @@ function engineerQuestions() {
        },
    ]).then(answers => {
        console.log(answers);
-       const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github)
+       const engineer = new Engineer(answers.engineerName, answers.engineerId, answers.engineerEmail, answers.github)
        console.log(engineer);
-       membersArray.push(Engineer);
+       membersArray.push(engineer);
        console.log(membersArray)
-       addMemberQuestion;
+       addMemberQuestion();
    })
 }
 function managerQuestions() {
@@ -69,11 +69,11 @@ function managerQuestions() {
        },
    ]).then(answers => {
        console.log(answers);
-       const manager = new Manager(answers.name, answers.id, answers.email, answers.github)
+       const manager = new Manager(answers.managerName, answers.managerId, answers.managerEmail, answers.officeNumber)
        console.log(manager);
-       membersArray.push(Manager);
+       membersArray.push(manager);
        console.log(membersArray)
-       addMemberQuestion;
+       addMemberQuestion();
    })
 }
 function internQuestions() {
@@ -100,11 +100,11 @@ function internQuestions() {
        },
    ]).then(answers => {
        console.log(answers);
-       const engineer = new Intern(answers.name, answers.id, answers.email, answers.github)
+       const intern = new Intern(answers.internName, answers.internId, answers.internEmail, answers.github)
        console.log(intern);
-       membersArray.push(Intern);
+       membersArray.push(intern);
        console.log(membersArray)
-       addMemberQuestion;
+       addMemberQuestion();
    })
 }
 function buildTeam() {
@@ -112,7 +112,7 @@ function buildTeam() {
    if (!fs.existsSync(OUTPUT_DIR)) {
        fs.mkdirSync(OUTPUT_DIR)
    }
-   fs.writeFileSync(outputPath, render(teamMembers), "utf-8");
+   fs.writeFileSync(outputPath, render(membersArray), "utf-8");
 }
 function addMemberQuestion() {
    inquirer.prompt([
@@ -120,7 +120,7 @@ function addMemberQuestion() {
            type: "list",
            name: "add",
            message: "Which type of team member would you like to add ?",
-           choices: ["Engineer", "Intern", "Finish Building My Team"],
+           choices: ["Engineer", "Manager", "Intern", "Finish Building My Team"],
        },
    ])
        .then(answers => {

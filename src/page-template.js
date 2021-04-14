@@ -4,7 +4,7 @@ const generateTeam = (team) => {
         <div class= 'card'>
         <p>${intern.getName()}</p>
         <p>${intern.getEmail()}</p>
-        <p>${intern.getID()}</p>
+        <p>${intern.getId()}</p>
         <p>${intern.getSchool()}</p>
         </div>`;
   };
@@ -15,7 +15,7 @@ const generateEngineer = (engineer) => {
     <div class= 'card'>
     <p>${engineer.getName()}</p>
     <p>${engineer.getEmail()}</p>
-    <p>${engineer.getID()}</p>
+    <p>${engineer.getId()}</p>
     <p>${engineer.getGithub()}</p>
     </div>`;
 };
@@ -25,15 +25,15 @@ const generateManager = (manager) => {
     <div class= 'card'>
     <p>${manager.getName()}</p>
     <p>${manager.getEmail()}</p>
-    <p>${manager.getID()}</p>
+    <p>${manager.getId()}</p>
     <p>${manager.getOfficeNumber()}</p>
     </div>`;
 };
 
-const htmlIndex = [];
+const html = [];
 html.push(
   team
-    .filer((employee) => employee.getRole() === "Manager")
+    .filter((employee) => employee.getRole() === "Manager")
     .map((manager) => generateManager(manager))
 );
 html.push(
@@ -46,7 +46,7 @@ html.push(
     .filter((employee) => employee.getRole() === "Intern")
     .map((intern) => generateIntern(intern))
 );
-return html.joint("");
+return html.join("");
 };
 module.exports = (team) => {
   return `
@@ -57,6 +57,7 @@ module.exports = (team) => {
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Team Profile Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
     <div class="container-fluid">
